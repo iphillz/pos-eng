@@ -25,11 +25,11 @@ export default function LandingPage() {
         </h1>
         
         <p className="text-xl md:text-2xl text-emerald-300/90 max-w-2xl mx-auto">
-          Don&apos;t Spend A Single Cent On Ads Until You Know This 3-Step Strategy That Allows
+          Don&apos;t Spend A Single Cent On Ads Until You Know This 3-Step Strategy
         </p>
 
         <p className="text-2xl md:text-3xl font-semibold text-white max-w-3xl mx-auto">
-          1 Hour Presentation Reveals Step By Step How Service Providers Increase Marketing Budget ROI 3-5 Times As Fast As 90 Days
+          How Service Providers Increase Marketing Budget ROI 3-5 Times As Fast As 90 Days
         </p>
 
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
