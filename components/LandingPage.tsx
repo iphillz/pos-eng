@@ -32,14 +32,14 @@ export default function LandingPage() {
           How Service Providers Increase Marketing Budget ROI 3-5 Times As Fast As 90 Days
         </p>
 
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogTrigger asChild>
+        <Dialog>
+          <DialogTrigger>
             <InteractiveButton>
               <span className="text-lg font-bold">Register To Save Your Spot</span>
               <span className="block text-xs opacity-80 mt-1">Limited Spots Available</span>
             </InteractiveButton>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-md bg-white">
+          <DialogContent className="sm:max-w-md bg-white rounded-3xl border-0 shadow-xl p-6">
             <MultiStepForm onClose={() => setIsOpen(false)} />
           </DialogContent>
         </Dialog>
