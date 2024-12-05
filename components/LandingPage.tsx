@@ -25,7 +25,7 @@ export default function LandingPage() {
         </h1>
         
         <p className="text-xl md:text-2xl text-emerald-300/90 max-w-2xl mx-auto">
-          Don't Spend A Single Cent On Ads Until You Know This 3-Step Strategy That Allows
+          Don&apos;t Spend A Single Cent On Ads Until You Know This 3-Step Strategy That Allows
         </p>
 
         <p className="text-2xl md:text-3xl font-semibold text-white max-w-3xl mx-auto">
@@ -45,7 +45,7 @@ export default function LandingPage() {
         </Dialog>
 
         <p className="text-sm text-gray-400 italic">
-          You'll get access to join the 1 Hour Presentation revealing the 3-Step Strategy in your email inbox
+          You&apos;ll get access to join the 1 Hour Presentation revealing the 3-Step Strategy in your email inbox
         </p>
       </div>
     </main>

@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import InteractiveButton from "./InteractiveButton"
 
 export default function MultiStepForm({ onClose }: { onClose?: () => void }) {
   const [step, setStep] = useState(1)
