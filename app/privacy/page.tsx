@@ -42,14 +42,42 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">4. Data Protection</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">4. Data Protection and Retention</h2>
             <p className="text-gray-600 mb-4">
               We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.
+            </p>
+            <p className="text-gray-600 mb-4">
+              Our data retention policy is as follows:
+            </p>
+            <ul className="list-disc pl-6 text-gray-600 mb-4">
+              <li>We retain your personal information for a maximum of 30 days after collection</li>
+              <li>After 30 days, your data is automatically deleted from our systems</li>
+              <li>You can request earlier deletion of your data at any time</li>
+              <li>We maintain secure backup systems during the retention period</li>
+              <li>Any analytical or aggregated data that doesn't identify you personally may be retained for longer periods</li>
+            </ul>
+            <p className="text-gray-600 mb-4">
+              We use industry-standard encryption and security protocols to ensure your data remains protected throughout its retention period.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">5. Your Rights</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">5. Data Processing</h2>
+            <p className="text-gray-600 mb-4">
+              During the retention period, your data may be processed for:
+            </p>
+            <ul className="list-disc pl-6 text-gray-600 mb-4">
+              <li>Delivering the requested Marketing ROI Strategy presentation</li>
+              <li>Following up on your interest in our services</li>
+              <li>Addressing any questions or concerns you may have</li>
+            </ul>
+            <p className="text-gray-600 mb-4">
+              After the 30-day retention period, we ensure complete deletion of your personal information from our active systems and backups.
+            </p>
+          </section>
+
+          <section className="mb-8">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">6. Your Rights</h2>
             <p className="text-gray-600 mb-4">You have the right to:</p>
             <ul className="list-disc pl-6 text-gray-600 mb-4">
               <li>Access your personal information</li>
@@ -60,7 +88,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">6. Contact Us</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Contact Us</h2>
             <p className="text-gray-600 mb-4">
               If you have any questions about this Privacy Policy, please contact us at:
               <br />
@@ -71,7 +99,7 @@ export default function PrivacyPolicy() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">7. Changes to This Policy</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">8. Changes to This Policy</h2>
             <p className="text-gray-600 mb-4">
               We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
             </p>
