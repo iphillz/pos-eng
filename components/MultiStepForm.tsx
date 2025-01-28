@@ -77,6 +77,10 @@ export default function MultiStepForm({ onClose }: { onClose?: () => void }) {
           </div>
         )}
 
+        <div className="text-xs text-gray-500 mt-2">
+          By submitting this form, you agree to our <a href="/privacy" className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        </div>
+
         <div className="flex justify-between gap-4 mt-6">
           {step > 1 && (
             <button 
