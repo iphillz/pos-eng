@@ -9,19 +9,66 @@ const buttonStyles = "w-full px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-
 
 export default function MultiStepForm({ onClose }: { onClose?: () => void }) {
   const [step, setStep] = useState(1)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
+    firstName: '',
+    email: '',
+    phone: ''
+  })
   const totalSteps = 3
 
-  const nextStep = () => {
-    if (step < totalSteps) {
-      setStep(step + 1)
-    } else {
-      // Handle form submission here
-      onClose?.()
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }))
+  }
+
+  const handleSubmit = async () => {
+    // Validate required fields
+    if (!formData.firstName || !formData.email || !formData.phone) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    try {
+      // Create URL with query parameters
+      const url = new URL('https://n8n.saastify.co/webhook/c752c784-f84f-466c-9f2a-21935753680e');
+      url.searchParams.append('firstName', formData.firstName);
+      url.searchParams.append('email', formData.email);
+      url.searchParams.append('phone', formData.phone);
+      url.searchParams.append('timestamp', new Date().toISOString());
+
+      const response = await fetch(url.toString(), {
+        method: 'GET',
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to submit form. Please try again.');
     }
   }
 
-  const prevStep = () => {
-    if (step > 1) setStep(step - 1)
+  if (isSubmitted) {
+    return (
+      <div className="text-center py-8">
+        <h3 className="text-2xl font-bold text-emerald-600 mb-4">Thank You!</h3>
+        <p className="text-gray-600 mb-6">
+          Please check your email for further instructions about the Marketing ROI Strategy presentation.
+        </p>
+        <button
+          onClick={onClose}
+          className={buttonStyles}
+        >
+          Close
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -47,6 +94,8 @@ export default function MultiStepForm({ onClose }: { onClose?: () => void }) {
               placeholder="Enter your first name" 
               className={inputStyles}
               required
+              value={formData.firstName}
+              onChange={(e) => handleInputChange('firstName', e.target.value)}
             />
           </div>
         )}
@@ -60,6 +109,8 @@ export default function MultiStepForm({ onClose }: { onClose?: () => void }) {
               placeholder="Enter your email" 
               className={inputStyles}
               required
+              value={formData.email}
+              onChange={(e) => handleInputChange('email', e.target.value)}
             />
           </div>
         )}
@@ -73,6 +124,8 @@ export default function MultiStepForm({ onClose }: { onClose?: () => void }) {
               placeholder="Enter your phone number" 
               className={inputStyles}
               required
+              value={formData.phone}
+              onChange={(e) => handleInputChange('phone', e.target.value)}
             />
           </div>
         )}
@@ -85,7 +138,7 @@ export default function MultiStepForm({ onClose }: { onClose?: () => void }) {
           {step > 1 && (
             <button 
               type="button"
-              onClick={prevStep}
+              onClick={() => setStep(step - 1)}
               className="px-4 py-2 text-sm text-gray-500 hover:text-gray-700"
             >
               Back
@@ -94,7 +147,13 @@ export default function MultiStepForm({ onClose }: { onClose?: () => void }) {
           
           <button 
             type="button"
-            onClick={nextStep}
+            onClick={() => {
+              if (step === totalSteps) {
+                handleSubmit();
+              } else {
+                setStep(step + 1);
+              }
+            }}
             className={buttonStyles}
           >
             {step === totalSteps ? "Submit Registration" : "Next Step"}
