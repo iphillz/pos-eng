@@ -5,7 +5,7 @@ function App() {
     const data = Object.fromEntries(formData);
     
     try {
-      await fetch('https://n8n.saastify.co/webhook/dcea7bf8-c22c-4e6f-8643-7bed4eab4ba5', {
+      await fetch('https://n8n.saastify.co/webhook-test/dcea7bf8-c22c-4e6f-8643-7bed4eab4ba5', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
